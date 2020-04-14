@@ -41,11 +41,10 @@ machine learning model on unseen data. The 3 models used to initially train our 
 
 Three new features were introduced.
 
-1. TotalIncome: Total Income of the family applying. 
+1. TotalIncome: Total Income of the family applying. The TotalIncome was right skewed. As we take the log transformation, it does not affect the smaller values much, but it reduces the larger values. So we get a distribution similar to a normal distribution. After the log transformation the extreme values have been subsided. 
 
     > TotalIncome = ApplicantIncome + CoapplicantIncome
-    The TotalIncome was right skewed. As we take the log transformation, it does not affect the smaller values much, but it reduces the     larger values. So we get a distribution similar to a normal distribution. After the log transformation the extreme values have been
-    subsided.
+    
     
 2. EMI: EMI to be paid each month 
     > EMI = Loan_Amount/Loan_Amount_Term
