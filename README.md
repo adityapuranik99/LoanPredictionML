@@ -57,3 +57,32 @@ To avoid large correlation, we dropped ApplicantIncome, CoapplicantIncome, Loan_
 
 ## Final Model Building
 
+Our data set is a little imbalanced. So instead of looking at accuracy to compare the models, we have went with AUROC here. Though we did look into other options like penalising the algos, and using the Decision Tree Classifier/Random Forest Classifier, we still kept our primary parameter as AUROC. Accuracy was also referred too. 
+
+We trained our dataset on following models:
+
+1. Logistic Regression :  We penalised the algorithm here by balancing the classes. 
+
+> class_weights = 'balanced'
+
+2. KNN
+3. Naive Bayes
+4. Support Vector Machine Gaussian : Again here, the algorithm was penalised. 
+5. Decision Tree Classifier
+6. Random Forest Classifier
+
+The Random Forest Classifier performed best on this dataset. 
+
+### Setting Decision Threshold
+
+As such, a simple and straightforward approach to improving the performance of a classifier that predicts probabilities on an imbalanced classification problem is to tune the threshold used to map probabilities to class labels. We referred to tune the decision threshold and to find the optimal point.
+The Geometric Mean or G-Mean is a metric for imbalanced classification that, if optimized, will seek a balance between the sensitivity and the specificity.
+
+> G-Mean = sqrt(Sensitivity * Specificity)
+
+We are testing the model with each threshold returned from the call roc_auc_score() and select the thresholdwith the largest G-Mean value.
+Since, the AUROC of the Random Forest curve is maximum, we have went forward with looking for its decision threshold.
+
+### Feature Importance
+
+*Feature importance* gives you a score for each feature of your data, the higher the score more important or relevant is the feature towards your output variable. Here, we have used **Random Forest** to plot the the graph for feature importance. **Credit History** is the most important feature in determining the loan status of an individual, followed by **TotalIncome**, and **Loan Amount_log**. 
