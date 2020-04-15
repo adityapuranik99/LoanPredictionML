@@ -1,5 +1,5 @@
 # Loan Prediction
-Bank Loan default prediction through various ML models
+Bank Loan default prediction through various ML models. 
 
 ## Problem Statement 
 
@@ -86,3 +86,6 @@ Since, the AUROC of the Random Forest curve is maximum, we have went forward wit
 ### Feature Importance
 
 *Feature importance* gives you a score for each feature of your data, the higher the score more important or relevant is the feature towards your output variable. Here, we have used **Random Forest** to plot the the graph for feature importance. **Credit History** is the most important feature in determining the loan status of an individual, followed by **TotalIncome**, and **Loan Amount_log**. 
+
+
+**Please refer to report for detailed analysis.**
